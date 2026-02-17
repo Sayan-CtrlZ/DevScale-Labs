@@ -107,7 +107,7 @@ const About = () => {
                             <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2069" alt="DevScale Labs Office" className="rounded-xl grayscale hover:grayscale-0 transition-all duration-500" />
                         </div>
                         <div className="absolute -bottom-6 -left-6 bg-bg-primary p-6 rounded-xl shadow-xl max-w-xs border border-gray-100 dark:border-white/10">
-                            <p className="font-serif italic text-lg text-gray-800 mb-2">"We don't just ship features; we engineer competitive advantages."</p>
+                            <p className="font-serif italic text-lg text-gray-800 dark:text-white mb-2">"We don't just ship features; we engineer competitive advantages."</p>
                             <p className="text-xs font-bold text-blue-600 uppercase tracking-wide">— Founder's Pledge</p>
                         </div>
                     </div>
