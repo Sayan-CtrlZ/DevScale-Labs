@@ -53,17 +53,17 @@ const Hero = () => {
                 </div>
 
                 {/* Right Visual - Glass Composition */}
-                <div className="relative h-[800px] w-full hidden lg:block perspective-1000 -mr-20">
+                <div className="relative h-[700px] w-full hidden lg:block perspective-1000">
                     {/* Background Glow */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-blue-100/50 dark:bg-blue-500/20 rounded-full blur-3xl opacity-50"></div>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-100/50 dark:bg-blue-500/20 rounded-full blur-3xl opacity-50"></div>
 
                     {/* 1. The Growth Dashboard (Central, Back) */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-[40%] -translate-y-[55%] w-[700px] z-10 hover:scale-[1.05] hover:-translate-y-[57%] transition-all duration-1000 ease-in-out drop-shadow-2xl will-change-transform">
+                    <div className="absolute top-1/2 left-1/2 -translate-x-[35%] -translate-y-[55%] w-[720px] z-10 hover:scale-[1.05] hover:-translate-y-[57%] transition-all duration-1000 ease-in-out drop-shadow-2xl will-change-transform">
                         <img
                             src={HeroDashboard}
                             alt="Growth Dashboard"
-                            width={700}
-                            height={485}
+                            width={720}
+                            height={500}
                             loading="eager"
                             decoding="async"
                             className="dark:hidden w-full h-auto object-contain rounded-3xl border border-white/20 shadow-2xl"
@@ -71,8 +71,8 @@ const Hero = () => {
                         <img
                             src={HeroDashboardDark}
                             alt="Growth Dashboard Dark"
-                            width={700}
-                            height={485}
+                            width={720}
+                            height={500}
                             loading="eager"
                             decoding="async"
                             className="hidden dark:block w-full h-auto object-contain rounded-3xl border border-white/10 shadow-2xl"
