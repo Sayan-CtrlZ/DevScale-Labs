@@ -58,12 +58,12 @@ const Hero = () => {
                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-blue-100/50 dark:bg-blue-500/20 rounded-full blur-3xl opacity-50"></div>
 
                     {/* 1. The Growth Dashboard (Central, Back) */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-[40%] -translate-y-1/2 w-[650px] z-10 hover:scale-[1.05] hover:-translate-y-[52%] transition-all duration-1000 ease-in-out drop-shadow-2xl will-change-transform">
+                    <div className="absolute top-1/2 left-1/2 -translate-x-[40%] -translate-y-[55%] w-[750px] z-10 hover:scale-[1.05] hover:-translate-y-[57%] transition-all duration-1000 ease-in-out drop-shadow-2xl will-change-transform">
                         <img
                             src={HeroDashboard}
                             alt="Growth Dashboard"
-                            width={650}
-                            height={450}
+                            width={750}
+                            height={520}
                             loading="eager"
                             decoding="async"
                             className="dark:hidden w-full h-auto object-contain rounded-3xl border border-white/20 shadow-2xl"
@@ -71,8 +71,8 @@ const Hero = () => {
                         <img
                             src={HeroDashboardDark}
                             alt="Growth Dashboard Dark"
-                            width={650}
-                            height={450}
+                            width={750}
+                            height={520}
                             loading="eager"
                             decoding="async"
                             className="hidden dark:block w-full h-auto object-contain rounded-3xl border border-white/10 shadow-2xl"

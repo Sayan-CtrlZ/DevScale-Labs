@@ -37,51 +37,56 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-bg-primary/60 backdrop-blur-md border-b border-gray-100 dark:border-white/10 transition-colors duration-300">
-            <div className="max-w-7xl mx-auto h-20 px-6 flex items-center justify-between">
-                {/* Logo - Left */}
-                <Link to="/" className="flex items-center gap-2 relative z-50 transition-opacity hover:opacity-90">
-                    <img src={devscaleLogo} alt="DevScale Labs" className="h-10 md:h-12 w-auto rounded-xl border border-gray-200 dark:border-white/10" />
-                </Link>
-
-                {/* Navigation Links - Center (Desktop) */}
-                <div className="hidden md:flex items-center space-x-8">
-                    {navLinks.map((link) => (
-                        <Link
-                            key={link.name}
-                            to={link.path}
-                            className="text-sm font-medium text-text-muted dark:text-white/90 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                        >
-                            {link.name}
-                        </Link>
-                    ))}
-                </div>
-
-                {/* Right Links & CTA */}
-                <div className="flex items-center gap-3 md:gap-6">
-                    {/* Theme Toggle */}
-                    <button
-                        onClick={toggleTheme}
-                        className="p-2 md:p-3 rounded-full hover:bg-bg-secondary text-text-muted dark:text-white/70 hover:text-text-main dark:hover:text-white transition-colors transform hover:scale-110 active:scale-95"
-                        aria-label="Toggle Dark Mode"
-                    >
-                        {theme === 'light' ? <Moon className="w-5 h-5 md:w-6 md:h-6" /> : <Sun className="w-5 h-5 md:w-6 md:h-6" />}
-                    </button>
-
-                    <Link to="/start-project" className="hidden sm:block bg-primary text-bg-primary px-5 py-2.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity">
-                        Start a Project
+        <>
+            <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isOpen
+                ? 'bg-bg-primary border-transparent'
+                : 'bg-bg-primary/60 backdrop-blur-md border-b border-gray-100 dark:border-white/10'
+                }`}>
+                <div className="max-w-7xl mx-auto h-20 px-6 flex items-center justify-between">
+                    {/* Logo - Left */}
+                    <Link to="/" className="flex items-center gap-2 relative z-50 transition-opacity hover:opacity-90">
+                        <img src={devscaleLogo} alt="DevScale Labs" className="h-10 md:h-12 w-auto rounded-xl border border-gray-200 dark:border-white/10" />
                     </Link>
 
-                    {/* Mobile Menu Button */}
-                    <button
-                        onClick={() => setIsOpen(!isOpen)}
-                        className="md:hidden p-2 rounded-xl bg-bg-secondary text-text-main dark:text-white relative z-50 transition-colors"
-                        aria-label="Toggle Menu"
-                    >
-                        {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                    </button>
+                    {/* Navigation Links - Center (Desktop) */}
+                    <div className="hidden md:flex items-center space-x-8">
+                        {navLinks.map((link) => (
+                            <Link
+                                key={link.name}
+                                to={link.path}
+                                className="text-sm font-medium text-text-muted dark:text-white/90 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                            >
+                                {link.name}
+                            </Link>
+                        ))}
+                    </div>
+
+                    {/* Right Links & CTA */}
+                    <div className="flex items-center gap-3 md:gap-6">
+                        {/* Theme Toggle */}
+                        <button
+                            onClick={toggleTheme}
+                            className="p-2 md:p-3 rounded-full hover:bg-bg-secondary text-text-muted dark:text-white/70 hover:text-text-main dark:hover:text-white transition-colors transform hover:scale-110 active:scale-95"
+                            aria-label="Toggle Dark Mode"
+                        >
+                            {theme === 'light' ? <Moon className="w-5 h-5 md:w-6 md:h-6" /> : <Sun className="w-5 h-5 md:w-6 md:h-6" />}
+                        </button>
+
+                        <Link to="/start-project" className="hidden sm:block bg-primary text-bg-primary px-5 py-2.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity">
+                            Start a Project
+                        </Link>
+
+                        {/* Mobile Menu Button */}
+                        <button
+                            onClick={() => setIsOpen(!isOpen)}
+                            className="md:hidden p-2 rounded-xl bg-bg-secondary text-text-main dark:text-white relative z-50 transition-colors"
+                            aria-label="Toggle Menu"
+                        >
+                            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+                        </button>
+                    </div>
                 </div>
-            </div>
+            </nav>
 
             {/* Mobile Menu Overlay */}
             <AnimatePresence>
@@ -91,12 +96,12 @@ const Navbar = () => {
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: '100%' }}
                         transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                        className="fixed inset-0 z-40 bg-bg-primary md:hidden pt-24 px-6"
+                        className="fixed inset-0 z-40 bg-bg-primary md:hidden pt-24 px-6 overflow-y-auto"
                     >
                         {/* Background Liquid Glow */}
                         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-blue-500/10 rounded-full blur-[100px] -z-10"></div>
 
-                        <div className="flex flex-col space-y-6">
+                        <div className="flex flex-col space-y-6 pb-20">
                             {navLinks.map((link, idx) => (
                                 <motion.div
                                     key={link.name}
@@ -144,7 +149,7 @@ const Navbar = () => {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </nav>
+        </>
     );
 };
 
