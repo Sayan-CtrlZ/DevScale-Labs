@@ -2,11 +2,20 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Global theme transition - Liquid Glow effect */
-*:not(img, svg, video) {
-  transition-property: background-color, border-color, color, box-shadow, text-shadow;
-  transition-duration: 400ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+/* Scoped transitions for theme switching and interactions */
+body {
+  @apply bg-bg-primary text-text-main font-sans antialiased;
+  transition: background-color 400ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a,
+button {
+  transition: background-color 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease,
+    opacity 200ms ease,
+    transform 200ms ease;
 }
 
 .dark *:not(img, svg, video) {
@@ -96,10 +105,6 @@
   background-image:
     linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
     linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
-}
-
-body {
-  @apply bg-bg-primary text-text-main font-sans antialiased transition-colors duration-400 ease-[cubic-bezier(0.4,0,0.2,1)];
 }
 
 /* Custom Scrollbar Styles */

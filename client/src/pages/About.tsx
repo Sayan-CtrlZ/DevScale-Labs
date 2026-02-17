@@ -104,7 +104,12 @@ const About = () => {
                     </div>
                     <div className="relative">
                         <div className="bg-gray-900 rounded-2xl p-2 shadow-2xl">
-                            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2069" alt="DevScale Labs Office" className="rounded-xl grayscale hover:grayscale-0 transition-all duration-500" />
+                            <img
+                                src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2069"
+                                alt="DevScale Labs Office"
+                                loading="lazy"
+                                className="rounded-xl grayscale hover:grayscale-0 transition-all duration-500"
+                            />
                         </div>
                         <div className="absolute -bottom-6 -left-6 bg-bg-primary p-6 rounded-xl shadow-xl max-w-xs border border-gray-100 dark:border-white/10">
                             <p className="font-serif italic text-lg text-gray-800 dark:text-white mb-2">"We don't just ship features; we engineer competitive advantages."</p>
@@ -154,7 +159,14 @@ const About = () => {
                         <div key={idx} className="text-center group premium-card p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300">
                             <div className="relative w-40 h-40 mx-auto mb-8">
                                 <div className="absolute inset-0 bg-blue-100 dark:bg-blue-900/30 rounded-[48px] transform rotate-6 group-hover:rotate-12 transition-transform"></div>
-                                <img src={member.image} alt={member.name} className="relative z-10 w-40 h-40 rounded-[48px] object-cover border-4 border-white dark:border-slate-900 shadow-xl" />
+                                <img
+                                    src={member.image}
+                                    alt={member.name}
+                                    width={160}
+                                    height={160}
+                                    loading="lazy"
+                                    className="relative z-10 w-40 h-40 rounded-[48px] object-cover border-4 border-white dark:border-slate-900 shadow-xl"
+                                />
                             </div>
                             <h3 className="text-xl font-bold text-text-main">{member.name}</h3>
                             <div className="inline-block px-3 py-1 bg-bg-secondary rounded-full text-xs font-medium text-blue-600 mt-2 mb-4 border border-gray-100 dark:border-white/10">
