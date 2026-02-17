@@ -127,7 +127,7 @@ const About = () => {
                         </div>
                         <h3 className="text-xl font-bold text-text-main mb-4">Our Mission</h3>
                         <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                            To replace expensive, clunky agencies with agile, results-driven engineering. We want to be the partner that helps you double your revenue.
+                            To replace expensive, clunky agencies with agile, results-driven engineering. We are committed to building high-performance systems that don't just function—they excel. By integrating advanced automation and custom code, we provide the technical leverage needed to double your revenue and streamline your operations for long-term growth.
                         </p>
                     </div>
                     <div className="bg-bg-primary p-10 rounded-2xl shadow-sm border border-gray-100 dark:border-white/10 text-center">
@@ -136,7 +136,7 @@ const About = () => {
                         </div>
                         <h3 className="text-xl font-bold text-text-main mb-4">Our Vision</h3>
                         <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                            A world where every small business owner has access to the same powerful automation and marketing tools as Fortune 500 companies.
+                            A world where every small business owner has access to the same powerful automation and marketing tools as Fortune 500 companies. We envision a future where sophisticated technology is accessible to everyone, ensuring that local enterprises can thrive in a digital-first economy with the help of enterprise-grade AI and cloud engineering.
                         </p>
                     </div>
                 </div>
