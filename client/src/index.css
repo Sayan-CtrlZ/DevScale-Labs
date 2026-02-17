@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Global theme transition - Liquid Glow effect */
+*:not(img, svg, video) {
+  transition-property: background-color, border-color, color, box-shadow, text-shadow;
+  transition-duration: 400ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark *:not(img, svg, video) {
+  text-shadow: 0 0 8px rgba(59, 130, 246, 0.1);
+}
+
+.light *:not(img, svg, video) {
+  text-shadow: none;
+}
+
+:root {
+  /* Light Mode Colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --color-primary-brand: #0a0f1c;
+  --grid-color: rgba(15, 23, 42, 0.05);
+
+  /* Brand Colors (Constant) */
+  --color-blue-600: #2563eb;
+  --color-blue-700: #1d4ed8;
+}
+
+.dark {
+  /* Dark Mode Colors */
+  --bg-primary: #020617;
+  --bg-secondary: #0f172a;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --color-primary-brand: #ffffff;
+  --grid-color: rgba(255, 255, 255, 0.05);
+
+  /* Gradients */
+  --bg-gradient-main: linear-gradient(to bottom, #020617, #0B1120);
+  --bg-gradient-surface: linear-gradient(145deg, #0f172a, #1e293b);
+  --bg-gradient-glow: radial-gradient(circle at center, rgba(37, 99, 235, 0.15), transparent 70%);
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+@theme {
+  --font-sans: "Inter", "system-ui", "sans-serif";
+
+  /* Map Tailwind colors to CSS variables */
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+  --color-primary: var(--color-primary-brand);
+  --color-secondary: #1e293b;
+  --color-accent: #2563eb;
+  --color-accent-hover: #1d4ed8;
+  --color-grid: var(--grid-color);
+}
+
+.tech-grid {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+}
+
+body {
+  @apply bg-bg-primary text-text-main font-sans antialiased transition-colors duration-400 cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.2);
+  border-radius: 10px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(37, 99, 235, 0.3);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.15);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.3);
+}
