@@ -1,5 +1,5 @@
 
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Instagram, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import devscaleLogo from '../assets/LOGO (2).png';
 
@@ -43,6 +43,27 @@ const Footer = () => {
                         <button className="text-gray-400 dark:text-gray-500 hover:text-blue-400 transition-colors">
                             <ArrowRight className="w-4 h-4" />
                         </button>
+                    </div>
+
+                    <div className="mt-8 flex gap-4">
+                        <a
+                            href="https://www.linkedin.com/company/devscale-labs"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2 bg-white/5 rounded-lg hover:bg-white/10 hover:text-blue-400 transition-all border border-white/5"
+                            aria-label="LinkedIn"
+                        >
+                            <Linkedin className="w-5 h-5" />
+                        </a>
+                        <a
+                            href="https://www.instagram.com/devscale.labs/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2 bg-white/5 rounded-lg hover:bg-white/10 hover:text-pink-400 transition-all border border-white/5"
+                            aria-label="Instagram"
+                        >
+                            <Instagram className="w-5 h-5" />
+                        </a>
                     </div>
                 </div>
             </div>
